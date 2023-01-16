@@ -2,13 +2,13 @@ const { User } = require('../models')
 
 
 module.exports = {
-  // getAllUser: async (req, res) => {
-  //   try {
+  getAllUser: async (req, res) => {
+    try {
       
-  //   } catch (error) {
+    } catch (error) {
       
-  //   }
-  // },
+    }
+  },
   getUserByUserName: async (req, res) => {
     try {
       const { username } = req.body 
