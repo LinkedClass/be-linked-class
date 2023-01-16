@@ -5,6 +5,6 @@ const {
 
 
 router.get('/', userController.getUserByUserName)
-// router.post('/', userController.postUser)
+router.post('/', userController.postUser)
 
 module.exports = router

@@ -19,18 +19,18 @@ module.exports = {
       res.json(error)
     }
   },
-  // postUser: async (req, res) => {
-  //   try {
-  //     const data = req.body
-  //     const insertUser = await User.createUser(data)
-  //     res.json(insertUser)
-  //   } catch (error) {
-  //     if(error.message.includes('duplicate')) {
-  //       res.json('Username has already registered!')
-  //     } else {
-  //       console.log(error)
-  //       res.json(error)
-  //     }
-  //   }
-  // }
+  postUser: async (req, res) => {
+    try {
+      const data = req.body
+      const insertUser = await User.createUser(data)
+      res.json(insertUser)
+    } catch (error) {
+      if(error.message.includes('duplicate')) {
+        res.json('Username has already registered!')
+      } else {
+        console.log(error)
+        res.json(error)
+      }
+    }
+  }
 }
