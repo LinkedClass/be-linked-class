@@ -3,8 +3,8 @@ const {
   userController 
 } = require('../controllers')
 
-
-router.get('/', userController.getUserByUserName)
+router.get('/', userController.getAllUser)
 router.post('/', userController.postUser)
+router.get('/:username', userController.getUserByUserName)
 
 module.exports = router
