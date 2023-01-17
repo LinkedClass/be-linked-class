@@ -3,10 +3,12 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 module.exports = {
+  findAll: async () => {
+    const result = await getDataBase().collection('User').find({ username: { $ne: 'admin' }}).toArray()
+    return result
+  },
   findOne: async (username) => {
-    console.log(username, 'ini')
     const result = await getDataBase().collection('User').findOne({ username })
-    console.log(result)
     return result
   },
   createUser: async (data) => {

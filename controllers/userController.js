@@ -4,15 +4,15 @@ const { User } = require('../models')
 module.exports = {
   getAllUser: async (req, res) => {
     try {
-      
+      const allUser = await User.findAll()
+      res.json(allUser)
     } catch (error) {
-      
+      res.json(error)
     }
   },
   getUserByUserName: async (req, res) => {
     try {
-      const { username } = req.body 
-      console.log(username)
+      const {username} = req.params
       const user = await User.findOne(username)
       res.json(user)
     } catch (error) {
